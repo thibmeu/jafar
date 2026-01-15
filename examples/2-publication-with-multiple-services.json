@@ -1,0 +1,29 @@
+{
+    "$schema": "../schema.json",
+    "formatVersion": "1.0",
+    "synctoken": "example 2",
+    "creationTime": "2025-09-01T10:00:00Z",
+    "notes": "IP ranges for ExampleCloud services. For verification, FCrDNS is also recommended.",
+    "prefixes": [
+        {
+            "ipv4Prefix": "192.0.2.0/24",
+            "service": "TEST-NET-1"
+        },
+        {
+            "ipv4Prefix": "198.51.100.0/24",
+            "service": "TEST-NET-2"
+        },
+        {
+            "ipv4Prefix": "203.0.113.0/24",
+            "service": "TEST-NET-3"
+        },
+        {
+            "ipv6Prefix": "2001:db8::/32",
+            "service": "RFC 3849"
+        },
+        {
+            "ipv6Prefix": "3fff::/20",
+            "service": "RFC 9637"
+        }
+    ]
+}

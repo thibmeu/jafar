@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "IP Prefix List",
+    "type": "object",
+    "properties": {
+        "formatVersion": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+$"
+        },
+        "synctoken": {
+            "type": "string"
+        },
+        "creationTime": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "notes": {
+            "type": "string"
+        },
+        "prefixes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ipv4Prefix": {
+                        "type": "string",
+                        "format": "ipv4-cidr",
+                        "pattern": "^(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\\/(?:3[0-2]|[12]?\\d)$"
+                    },
+                    "ipv6Prefix": {
+                        "type": "string",
+                        "format": "ipv6-cidr",
+                        "pattern": "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\/(?:12[0-8]|1[01]\\d|[1-9]?\\d)$"
+                    },
+                    "service": {
+                        "type": "string"
+                    }
+                },
+                "oneOf": [
+                    {
+                        "required": [
+                            "ipv4Prefix"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "ipv6Prefix"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "required": [
+        "formatVersion",
+        "synctoken",
+        "creationTime",
+        "prefixes"
+    ]
+}
