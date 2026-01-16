@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/main/schema.json",
+  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-00/schema.json",
   "$comment": "JSON Schema for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients). See https://datatracker.ietf.org/doc/html/draft-illyes-aipref-jafar-00",
   "title": "JAFAR",
   "description": "A machine-readable format for automated HTTP client operators to publish their IP address ranges.",
@@ -9,20 +9,26 @@
     "formatVersion": {
       "type": "string",
       "pattern": "^\\d+\\.\\d+$",
-      "description": "The version of the JAFAR format used in this document."
+      "description": "The version of the JAFAR format used in this document.",
+      "examples": ["1.0"]
     },
     "synctoken": {
       "type": "string",
-      "description": "An opaque token that changes when the document content changes, used for caching and synchronization."
+      "description": "An opaque token that changes when the document content changes, used for caching and synchronization.",
+      "examples": ["1749893516", "abc123"]
     },
     "creationTime": {
       "type": "string",
       "format": "date-time",
-      "description": "The date and time when this document was created, in RFC 3339 format."
+      "description": "The date and time when this document was created, in ISO 8601 timestamp format.",
+      "examples": ["2025-08-15T14:30:00Z"]
     },
     "notes": {
       "type": "string",
-      "description": "Optional human-readable notes about this publication."
+      "description": "Optional human-readable notes about this publication.",
+      "examples": [
+        "IP ranges for ExampleBot crawler. For verification, FCrDNS is recommended."
+      ]
     },
     "prefixes": {
       "type": "array",
@@ -34,16 +40,19 @@
           "ipv4Prefix": {
             "type": "string",
             "pattern": "^(\\b25[0-5]|\\b2[0-4][0-9]|\\b[01]?[0-9][0-9]?)(\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\\/(?:3[0-2]|[12]?\\d)$",
-            "description": "An IPv4 CIDR prefix (e.g., \"192.0.2.0/24\")."
+            "description": "An IPv4 CIDR prefix (e.g., \"192.0.2.0/24\").",
+            "examples": ["192.0.2.0/24", "66.249.64.0/20"]
           },
           "ipv6Prefix": {
             "type": "string",
             "pattern": "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]).){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\/(?:12[0-8]|1[01]\\d|[1-9]?\\d)$",
-            "description": "An IPv6 CIDR prefix (e.g., \"2001:db8::/32\")."
+            "description": "An IPv6 CIDR prefix (e.g., \"2001:db8::/32\").",
+            "examples": ["2001:db8::/32", "2001:4860:4000::/36"]
           },
           "service": {
             "type": "string",
-            "description": "An optional identifier for the service or product using this prefix."
+            "description": "An optional identifier for the service or product using this prefix.",
+            "examples": ["Bingbot", "AdsBot-Google"]
           }
         },
         "oneOf": [

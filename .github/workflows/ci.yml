@@ -11,30 +11,30 @@ jobs:
     name: Check formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22"
-      - run: npx prettier --check "**/*.md" "**/*.json"
+          node-version: "24"
+      - run: npx prettier@3.8.0 --check "**/*.md" "**/*.json"
 
   validate-schema:
     name: Validate JSON Schema
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22"
-      - run: npm install -g ajv-cli ajv-formats
+          node-version: "24"
+      - run: npm install -g ajv-cli@5.0.0 ajv-formats@3.0.1
       - run: ajv compile --spec=draft2020 -c ajv-formats -s schema.json
 
   validate-examples:
     name: Validate examples against schema
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: "22"
-      - run: npm install -g ajv-cli ajv-formats
+          node-version: "24"
+      - run: npm install -g ajv-cli@5.0.0 ajv-formats@3.0.1
       - run: ajv validate --spec=draft2020 -c ajv-formats -s schema.json -d "examples/*.json"

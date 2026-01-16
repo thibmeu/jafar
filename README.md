@@ -18,7 +18,7 @@ JAFAR provides a machine-readable format for automated HTTP client operators (we
 
 - JAFAR validation, including IPv4 and IPv6 prefixes
 - JSON Schema 2020-12 compliant
-- Schema [URL](https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/main/schema.json)
+- Schema URL `https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-00/schema.json`
 
 ## Real-World Examples
 
@@ -34,14 +34,30 @@ The following services publish IP ranges in JAFAR-adjacent formats:
 
 The JSON Schema is provided in [schema.json](./schema.json).
 
+### Editor Integration
+
+Add `$schema` to your JAFAR documents for IDE autocompletion and inline validation:
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-00/schema.json",
+  "formatVersion": "1.0",
+  "synctoken": "...",
+  "creationTime": "2025-08-15T14:30:00Z",
+  "prefixes": [...]
+}
+```
+
+### Validation
+
 You can validate JAFAR documents using any JSON Schema 2020-12 compliant validator.
 
-| Language   | Tool                                                                                  | Command                                                                 |
-| ---------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| JavaScript | [ajv-cli](https://github.com/ajv-validator/ajv-cli)                                   | `ajv validate --spec=draft2020 -c ajv-formats -s schema.json -d <file>` |
-| Rust       | [jsonschema-rs](https://github.com/Stranger6667/jsonschema)                           | `jsonschema-cli schema.json -i <file>`                                  |
-| Python     | [jsonschema](https://github.com/python-jsonschema/jsonschema)                         | `jsonschema -i <file> schema.json`                                      |
-| Go         | [santhosh-tekuri/jsonschema](https://github.com/santhosh-tekuri/jsonschema)           | `jv schema.json <file>`                                                 |
+| Language   | Tool                                                                        | Command                                                                 |
+| ---------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| JavaScript | [ajv-cli](https://github.com/ajv-validator/ajv-cli)                         | `ajv validate --spec=draft2020 -c ajv-formats -s schema.json -d <file>` |
+| Rust       | [jsonschema-rs](https://github.com/Stranger6667/jsonschema)                 | `jsonschema-cli schema.json -i <file>`                                  |
+| Python     | [jsonschema](https://github.com/python-jsonschema/jsonschema)               | `jsonschema -i <file> schema.json`                                      |
+| Go         | [santhosh-tekuri/jsonschema](https://github.com/santhosh-tekuri/jsonschema) | `jv schema.json <file>`                                                 |
 
 For a comprehensive list, see [JSON Schema Implementations](https://json-schema.org/implementations).
 
