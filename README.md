@@ -6,26 +6,44 @@ This repository contains the [JSON Schema](https://json-schema.org/) implementat
 
 JAFAR provides a machine-readable format for automated HTTP client operators (web crawlers, AI bots, etc.) to publish their IP address ranges, enabling website operators to identify and verify legitimate automated traffic.
 
-## Tables of Content
+## Table of Contents
 
 - [Features](#features)
+- [Real-World Examples](#real-world-examples)
 - [Usage](#usage)
 - [Security Considerations](#security-considerations)
 - [License](#license)
 
 ## Features
 
-- JAFAR validation, including ipv4 and ipv6 prefixes
+- JAFAR validation, including IPv4 and IPv6 prefixes
+- JSON Schema 2020-12 compliant
 - Schema [URL](https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/main/schema.json)
+
+## Real-World Examples
+
+The following services publish IP ranges in JAFAR-adjacent formats:
+
+| Service                 | URL                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| Googlebot               | https://developers.google.com/static/search/apis/ipranges/googlebot.json        |
+| Google Special Crawlers | https://developers.google.com/static/search/apis/ipranges/special-crawlers.json |
+| Bingbot                 | https://www.bing.com/toolbox/bingbot.json                                       |
 
 ## Usage
 
 The JSON Schema is provided in [schema.json](./schema.json).
 
-You can use your favorite validation tool on the examples provided in [examples](./examples/) folder. A non exhaustive list:
+You can validate JAFAR documents using any JSON Schema 2020-12 compliant validator.
 
-- [ajv-cli](https://github.com/ajv-validator/ajv-cli) in JavaScript with `ajv validate --spec=draft2020 -s schema.json -d examples/1-basic-publication.json`
-- [jsonschema](https://github.com/Stranger6667/jsonschema) in Rust with `jsonschema-cli schema.json -i examples/1-basic-publication.json`
+| Language   | Tool                                                                                  | Command                                                                 |
+| ---------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| JavaScript | [ajv-cli](https://github.com/ajv-validator/ajv-cli)                                   | `ajv validate --spec=draft2020 -c ajv-formats -s schema.json -d <file>` |
+| Rust       | [jsonschema-rs](https://github.com/Stranger6667/jsonschema)                           | `jsonschema-cli schema.json -i <file>`                                  |
+| Python     | [jsonschema](https://github.com/python-jsonschema/jsonschema)                         | `jsonschema -i <file> schema.json`                                      |
+| Go         | [santhosh-tekuri/jsonschema](https://github.com/santhosh-tekuri/jsonschema)           | `jv schema.json <file>`                                                 |
+
+For a comprehensive list, see [JSON Schema Implementations](https://json-schema.org/implementations).
 
 ## Security Considerations
 

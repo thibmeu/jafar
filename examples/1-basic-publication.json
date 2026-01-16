@@ -1,17 +1,17 @@
 {
-    "$schema": "../schema.json",
-    "formatVersion": "1.0",
-    "synctoken": "example 1",
-    "creationTime": "2025-08-15T14:30:00Z",
-    "prefixes": [
-        {
-            "ipv4Prefix": "66.249.64.0/20"
-        },
-        {
-            "ipv4Prefix": "34.64.0.0/12"
-        },
-        {
-            "ipv6Prefix": "2001:4860:4000::/36"
-        }
-    ]
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/main/schema.json",
+  "formatVersion": "1.0",
+  "synctoken": "example 1",
+  "creationTime": "2025-08-15T14:30:00Z",
+  "prefixes": [
+    {
+      "ipv4Prefix": "66.249.64.0/20"
+    },
+    {
+      "ipv4Prefix": "34.64.0.0/12"
+    },
+    {
+      "ipv6Prefix": "2001:4860:4000::/36"
+    }
+  ]
 }
