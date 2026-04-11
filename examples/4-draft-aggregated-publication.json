@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-02/schema.json",
+  "synctoken": "20260410223000",
+  "creationTime": "2026-04-10T22:30:00Z",
+  "notes": "Aggregated feed of verified automated clients. Attribution maintained via services array. Data refreshed every 24 hours.",
+  "prefixes": [
+    {
+      "ipv4Prefix": "192.0.2.0/24",
+      "services": ["SearchEngine-A-Crawler", "SearchEngine-A-ImageBot"]
+    },
+    {
+      "ipv4Prefix": "198.51.100.0/24",
+      "services": ["SocialMedia-B-Preview"]
+    },
+    {
+      "ipv6Prefix": "2001:db8:abc::/48",
+      "services": ["TechCo-C-HealthCheck", "TechCo-C-Ads"]
+    }
+  ]
+}

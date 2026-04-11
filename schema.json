@@ -1,17 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-00/schema.json",
-  "$comment": "JSON Schema for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients). See https://datatracker.ietf.org/doc/html/draft-illyes-aipref-jafar-00",
+  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-02/schema.json",
+  "$comment": "JSON Schema for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients). See https://datatracker.ietf.org/doc/html/draft-illyes-aipref-jafar-02",
   "title": "JAFAR",
   "description": "A machine-readable format for automated HTTP client operators to publish their IP address ranges.",
   "type": "object",
   "properties": {
-    "formatVersion": {
-      "type": "string",
-      "pattern": "^\\d+\\.\\d+$",
-      "description": "The version of the JAFAR format used in this document.",
-      "examples": ["1.0"]
-    },
     "synctoken": {
       "type": "string",
       "description": "An opaque token that changes when the document content changes, used for caching and synchronization.",
@@ -49,10 +43,11 @@
             "description": "An IPv6 CIDR prefix (e.g., \"2001:db8::/32\").",
             "examples": ["2001:db8::/32", "2001:4860:4000::/36"]
           },
-          "service": {
-            "type": "string",
-            "description": "An optional identifier for the service or product using this prefix.",
-            "examples": ["Bingbot", "AdsBot-Google"]
+          "services": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "An optional list of service or product identifiers using this prefix.",
+            "examples": [["Bingbot", "AdsBot-Google"]]
           }
         },
         "oneOf": [
@@ -66,5 +61,5 @@
       }
     }
   },
-  "required": ["formatVersion", "synctoken", "creationTime", "prefixes"]
+  "required": ["creationTime", "prefixes"]
 }
