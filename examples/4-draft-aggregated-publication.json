@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/tags/draft-illyes-webbotauth-jafar-00/schema.json",
   "synctoken": "20260410223000",
   "creationTime": "2026-04-10T22:30:00Z",
   "notes": "Aggregated feed of verified automated clients. Attribution maintained via services array. Data refreshed every 24 hours.",

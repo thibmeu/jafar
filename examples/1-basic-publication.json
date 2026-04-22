@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/tags/draft-illyes-webbotauth-jafar-00/schema.json",
   "synctoken": "example 1",
   "creationTime": "2025-08-15T14:30:00Z",
   "prefixes": [

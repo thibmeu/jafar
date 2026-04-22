@@ -18,7 +18,7 @@ JAFAR provides a machine-readable format for automated HTTP client operators (we
 
 - JAFAR validation, including IPv4 and IPv6 prefixes
 - JSON Schema 2020-12 compliant
-- Schema URL `https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json`
+- Schema URL `https://raw.githubusercontent.com/thibmeu/jafar/refs/tags/draft-illyes-webbotauth-jafar-00/schema.json`
 
 ## Real-World Examples
 
@@ -44,7 +44,7 @@ Add `$schema` to your JAFAR documents for IDE autocompletion and inline validati
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/tags/draft-illyes-webbotauth-jafar-00/schema.json",
   "creationTime": "2025-08-15T14:30:00Z",
   "prefixes": [...]
 }

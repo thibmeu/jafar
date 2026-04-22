@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/tags/draft-illyes-webbotauth-jafar-00/schema.json",
   "synctoken": "example 2",
   "creationTime": "2025-09-01T10:00:00Z",
   "notes": "IP ranges for ExampleCloud services. For verification, FCrDNS is also recommended.",
