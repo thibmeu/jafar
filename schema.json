@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-02/schema.json",
-  "$comment": "JSON Schema for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients). See https://datatracker.ietf.org/doc/html/draft-illyes-aipref-jafar-02",
+  "$id": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
+  "$comment": "JSON Schema for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients). See https://datatracker.ietf.org/doc/html/draft-illyes-webbotauth-jafar-00",
   "title": "JAFAR",
   "description": "A machine-readable format for automated HTTP client operators to publish their IP address ranges.",
   "type": "object",

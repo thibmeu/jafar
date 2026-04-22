@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/github/license/thibmeu/jafar)
 
-This repository contains the [JSON Schema](https://json-schema.org/) implementation for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients), as defined in [draft-illyes-aipref-jafar-02](https://datatracker.ietf.org/doc/html/draft-illyes-aipref-jafar-02).
+This repository contains the [JSON Schema](https://json-schema.org/) implementation for JAFAR (JSON-Based Format for Publishing IP Ranges of Automated HTTP Clients), as defined in [draft-illyes-webbotauth-jafar-00](https://datatracker.ietf.org/doc/html/draft-illyes-webbotauth-jafar-00).
 
 JAFAR provides a machine-readable format for automated HTTP client operators (web crawlers, AI bots, etc.) to publish their IP address ranges, enabling website operators to identify and verify legitimate automated traffic.
 
@@ -18,7 +18,7 @@ JAFAR provides a machine-readable format for automated HTTP client operators (we
 
 - JAFAR validation, including IPv4 and IPv6 prefixes
 - JSON Schema 2020-12 compliant
-- Schema URL `https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-02/schema.json`
+- Schema URL `https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json`
 
 ## Real-World Examples
 
@@ -36,7 +36,7 @@ The JSON Schema is provided in [schema.json](./schema.json).
 
 ### Media Type
 
-JAFAR documents use the media type `application/jafar+json`.
+JAFAR documents use the media type `application/jafar+json`. There is an optional `version` parameter.
 
 ### Editor Integration
 
@@ -44,7 +44,7 @@ Add `$schema` to your JAFAR documents for IDE autocompletion and inline validati
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-aipref-jafar-02/schema.json",
+  "$schema": "https://raw.githubusercontent.com/thibmeu/jafar/refs/heads/draft-illyes-webbotauth-jafar-00/schema.json",
   "creationTime": "2025-08-15T14:30:00Z",
   "prefixes": [...]
 }
